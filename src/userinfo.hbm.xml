@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.fw.db.pojo.UserInfo" table="userinfos">
+		<id name="id" column="id">
+			<generator class="foreign" >
+        		<param name="property">user</param>  
+			</generator>
+		</id>
+		<property name="nickName" column="nickname" />
+		<property name="remarkName" column="remarkname" />
+		<property name="signature" column="signature" />
+		<property name="statue" column="statue" />
+		<property name="ip" column="ip" />
+		<property name="groupName" column="groupname" />
+		<property name="headIcon" column="headicon" />
+		<property name="port" column="port" />
+		<one-to-one name="user" class="org.fw.db.pojo.User" constrained="true"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+package org.fw.utils;
+
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
+public class ImageHelper {
+
+	/**
+	 * »ñÈ¡Í¼Æ¬
+	 * @param path Í¼Æ¬Â·¾¶
+	 * @return
+	 */
+	public Image getFWImage(String path){
+		ImageIcon image = new ImageIcon(path);
+		return image.getImage();
+	}
+	/**
+	 * »ñÈ¡Í¼Æ¬icon
+	 * @param path Í¼Æ¬Â·¾¶
+	 * @return
+	 */
+	public ImageIcon getFWImageIcon(String path){
+		ImageIcon image = new ImageIcon(path);
+		return image;
+	}
+}

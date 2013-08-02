@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.fw.db.pojo.User" table="users">
+		<id name="id" column="id">
+			<generator class="native" />
+		</id>
+		<property name="number" column="number" />
+		<property name="password" column="password" />
+		<set name="friends" table="friends"
+			inverse="false" cascade="all" sort="unsorted">
+			<key column="userid" />
+			<one-to-many class="org.fw.db.pojo.Friend" />
+		</set>
+		<one-to-one name="userInfo" cascade="all" class="org.fw.db.pojo.UserInfo"/>
+	</class>
+</hibernate-mapping>
